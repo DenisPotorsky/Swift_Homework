@@ -7,7 +7,7 @@ import UIKit
  массив начинается с 1, каждый последующий элемент больше предыдущего в 2 раза.
  */
 
-var num = 7
+var num = 9
 
 func create_array(number: Int) -> [Int]{
     var array: [Int] = []
@@ -23,6 +23,3 @@ func create_array(number: Int) -> [Int]{
 }
 
 print(create_array(number: num))
-=======
-var greeting = "Hello, world!!!"
->>>>>>> f7ee9e91a26f8385d56bde4d73ba926f741bf88e
