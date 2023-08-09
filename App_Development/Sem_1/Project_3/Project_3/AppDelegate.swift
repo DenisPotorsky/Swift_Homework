@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  Project_3
-//
-//  Created by Den on 09.08.2023.
-//
 
 import UIKit
 
