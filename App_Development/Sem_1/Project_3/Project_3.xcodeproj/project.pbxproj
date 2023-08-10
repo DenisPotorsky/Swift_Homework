@@ -16,7 +16,7 @@
 		B7913BC82A83EC78003E6222 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7913BC02A83EC78003E6222 /* CustomTableViewCell.swift */; };
 		B7913BC92A83EC78003E6222 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7913BC12A83EC78003E6222 /* FriendsViewController.swift */; };
 		B7913BCA2A83EC78003E6222 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7913BC22A83EC78003E6222 /* CustomCollectionViewCell.swift */; };
-		B7913BCB2A83EC78003E6222 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7913BC32A83EC78003E6222 /* ViewController.swift */; };
+		B7913BCB2A83EC78003E6222 /* .. in Sources */ = {isa = PBXBuildFile; fileRef = B7913BC32A83EC78003E6222 /* .. */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		B7913BC02A83EC78003E6222 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = "../../../../../../Downloads/Project_1 2/Project_1/CustomTableViewCell.swift"; sourceTree = "<group>"; };
 		B7913BC12A83EC78003E6222 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsViewController.swift; path = "../../../../../../Downloads/Project_1 2/Project_1/FriendsViewController.swift"; sourceTree = "<group>"; };
 		B7913BC22A83EC78003E6222 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionViewCell.swift; path = "../../../../../../Downloads/Project_1 2/Project_1/CustomCollectionViewCell.swift"; sourceTree = "<group>"; };
-		B7913BC32A83EC78003E6222 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../../../Downloads/Project_1 2/Project_1/ViewController.swift"; sourceTree = "<group>"; };
+		B7913BC32A83EC78003E6222 /* .. */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = ..; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 				B7913BBE2A83EC78003E6222 /* SceneDelegate.swift */,
 				B7913BC12A83EC78003E6222 /* FriendsViewController.swift */,
 				B7913BBC2A83EC78003E6222 /* GroupsViewController.swift */,
-				B7913BC32A83EC78003E6222 /* ViewController.swift */,
+				B7913BC32A83EC78003E6222 /* .. */,
 			);
 			path = Project_3;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 				B7913BC82A83EC78003E6222 /* CustomTableViewCell.swift in Sources */,
 				B7913BC92A83EC78003E6222 /* FriendsViewController.swift in Sources */,
 				B7913BC52A83EC78003E6222 /* CollectionViewController.swift in Sources */,
-				B7913BCB2A83EC78003E6222 /* ViewController.swift in Sources */,
+				B7913BCB2A83EC78003E6222 /* .. in Sources */,
 				B7913BCA2A83EC78003E6222 /* CustomCollectionViewCell.swift in Sources */,
 				B7913BC42A83EC78003E6222 /* GroupsViewController.swift in Sources */,
 				B7913BA92A83EAFC003E6222 /* AppDelegate.swift in Sources */,
