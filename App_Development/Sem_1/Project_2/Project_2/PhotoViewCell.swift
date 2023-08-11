@@ -7,10 +7,12 @@
 
 import UIKit
 
-final class CustomPhotoViewCell: UICollectionViewCell {
+final class PhotoViewCell: UICollectionViewCell {
+    
     
     var tap: ((UIImage) -> Void)?
-    private var imageView = UIImageView(image: UIImage(systemName: "heart.fill"))
+    private var imageView = UIImageView()
+    private let network = NetworkService()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +27,7 @@ final class CustomPhotoViewCell: UICollectionViewCell {
     
     private func setupViews() {
         addSubview(imageView)
+        network.getPhotos()
         setupConstraints()
     }
     

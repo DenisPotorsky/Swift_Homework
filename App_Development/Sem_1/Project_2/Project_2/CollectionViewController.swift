@@ -13,7 +13,7 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         title = "Photos"
-        collectionView.register(CustomPhotoViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(PhotoViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -22,7 +22,7 @@ class CollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        guard let cell = cell as? CustomPhotoViewCell else {
+        guard let cell = cell as? PhotoViewCell else {
             return UICollectionViewCell()
         }
         cell.tap = { [weak self] image in

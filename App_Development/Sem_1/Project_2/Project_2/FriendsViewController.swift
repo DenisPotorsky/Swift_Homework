@@ -8,6 +8,7 @@
 import UIKit
 
 class FriendsViewController: UITableViewController {
+    private let networkService = NetworkService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +17,7 @@ class FriendsViewController: UITableViewController {
         tableView.backgroundColor = .white
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.barTintColor = .white
+        networkService.getFriends()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
