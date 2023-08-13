@@ -10,11 +10,11 @@ import Foundation
 final class NetworkService {
     private let session = URLSession.shared
     
-    static var token = "vk1.a.cosjGAhsidr8c4ew78JMQSwc2SRZ45Z4syqB7Y8he9YCKRNEsqnRUnQ0ecUsYKxOlhYZMQWdMz0Zw3RLcc3SYCS0Zqb2XWiWtL2-hZre-2HJnkm-ABptLi5Ycs5rZK8LFFKAWusTGhAFNsWpz-D58BQJlbks6AhZjUCQJ59MMAq7RX76GYmj0O4O9JmfEUfoyARgpoW0NkmqQBndWZlGFQ"
+    static var token = "vk1.a.iE_PzcsecS_DPI1OXCOJLpJhSLYvyMTtnFFBNCRJpOmFStARSt3tGqeAaaspwezz3pyJWFba4K73vRUx9VWMofynNMnKoixjs1rXtYbcmnTu9xsEjDpf3dL4W4LSJdqLrACcVDFSSgptUu9PNXarfirhveMC17Hnxorxpdn3v-YNeAdeOLIHlGe_EarFhaY0ygXGkbs_W1RAid2b8KzYsQ"
     static var userID = "582582415"
     
     func getPhotos() {
-        let url = URL(string: "https://api.vk.com/method/photos.get?fields=bdate&access_token=\(NetworkService.token)&v=5.131&album_id=profile")
+        let url = URL(string: "")
         
         session.dataTask(with: url!) { (data, _, error) in
             guard let data else {
@@ -29,13 +29,14 @@ final class NetworkService {
         }.resume()
     }
     func getFriends() {
-        let url = URL(string: "https://api.vk.com/method/friends.get?fields=bdate&access_token=\(NetworkService.token)&v=5.131")
+        let url = URL(string: "https://api.vk.com/method/friends.get?user_id=\(NetworkService.userID)&access_token=\(NetworkService.token)&v=5.131")
         session.dataTask(with: url!) { (data, _, error) in
             guard let data else {
                 return
             }
             do {
-                let towns = try JSONDecoder().decode(FriendsModel.self, from: data)
+                print(data)
+                let towns = try JSONDecoder().decode([FriendsModel].self, from: data)
                 print(towns)
             } catch {
                 print(error)
