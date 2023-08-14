@@ -7,11 +7,14 @@
 import UIKit
 class PhotoViewController: UICollectionViewController {
     
+    let networkService = NetworkService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         title = "Photos"
         collectionView.register(PhotoViewCell.self, forCellWithReuseIdentifier: "Cell")
+        networkService.getPhotos()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

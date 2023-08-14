@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B760E1122A8A2B2000DF2BB9 /* GroupsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B760E1112A8A2B2000DF2BB9 /* GroupsModel.swift */; };
 		B7F1B6702A89F83400516194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1B66F2A89F83400516194 /* AppDelegate.swift */; };
 		B7F1B6722A89F83400516194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1B6712A89F83400516194 /* SceneDelegate.swift */; };
 		B7F1B6742A89F83400516194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1B6732A89F83400516194 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B760E1112A8A2B2000DF2BB9 /* GroupsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsModel.swift; sourceTree = "<group>"; };
 		B7F1B66C2A89F83400516194 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F1B66F2A89F83400516194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7F1B6712A89F83400516194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				B7F1B68F2A89FC0B00516194 /* NetworkService.swift */,
 				B7F1B6912A89FC2500516194 /* PhotoModel.swift */,
 				B7F1B6932A89FC4000516194 /* PhotoViewCell.swift */,
+				B760E1112A8A2B2000DF2BB9 /* GroupsModel.swift */,
 			);
 			path = MyApp;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				B7F1B6922A89FC2500516194 /* PhotoModel.swift in Sources */,
 				B7F1B6882A89FB8600516194 /* CustomTableViewCell2.swift in Sources */,
 				B7F1B68E2A89FBED00516194 /* GroupsViewController.swift in Sources */,
+				B760E1122A8A2B2000DF2BB9 /* GroupsModel.swift in Sources */,
 				B7F1B6942A89FC4000516194 /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

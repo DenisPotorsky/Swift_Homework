@@ -10,24 +10,25 @@ import Foundation
 final class NetworkService {
     private let session = URLSession.shared
     
-    static var token = "vk1.a.iE_PzcsecS_DPI1OXCOJLpJhSLYvyMTtnFFBNCRJpOmFStARSt3tGqeAaaspwezz3pyJWFba4K73vRUx9VWMofynNMnKoixjs1rXtYbcmnTu9xsEjDpf3dL4W4LSJdqLrACcVDFSSgptUu9PNXarfirhveMC17Hnxorxpdn3v-YNeAdeOLIHlGe_EarFhaY0ygXGkbs_W1RAid2b8KzYsQ"
-    static var userID = "582582415"
+    static var token = ""
+    static var userID = ""
     
     func getPhotos() {
-        let url = URL(string: "")
+        let url = URL(string: "https://api.vk.com/method/photos.get?user_id=\(NetworkService.userID)&access_token=\(NetworkService.token)&v=5.131")
         
         session.dataTask(with: url!) { (data, _, error) in
             guard let data else {
                 return
             }
             do {
-                let towns = try JSONDecoder().decode(PhotoModel.self, from: data)
-                print(towns)
+                let photos = try JSONDecoder().decode(PhotoModel.self, from: data)
+                print(photos)
             } catch {
                 print(error)
             }
         }.resume()
     }
+    
     func getFriends() {
         let url = URL(string: "https://api.vk.com/method/friends.get?user_id=\(NetworkService.userID)&access_token=\(NetworkService.token)&v=5.131")
         session.dataTask(with: url!) { (data, _, error) in
@@ -35,11 +36,28 @@ final class NetworkService {
                 return
             }
             do {
-                print(data)
-                let towns = try JSONDecoder().decode([FriendsModel].self, from: data)
-                print(towns)
+                let friends = try JSONDecoder().decode(FriendsModel.self, from: data)
+                print(friends)
             } catch {
                 print(error)
             }
-        }.resume()    }
+        }.resume()
+        
+    }
+    
+    func getGroups() {
+        let url = URL(string: "https://api.vk.com/method/groups.get?user_id=\(NetworkService.userID)&access_token=\(NetworkService.token)&v=5.131")
+        session.dataTask(with: url!) { (data, _, error) in
+            guard let data else {
+                return
+            }
+            do {
+                let groups = try JSONDecoder().decode(GroupsModel.self, from: data)
+                print(groups)
+            } catch {
+                print(error)
+            }
+        }.resume()
+        
+    }
 }
