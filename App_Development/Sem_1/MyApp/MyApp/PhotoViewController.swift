@@ -1,21 +1,17 @@
 //
-//  CollectionViewController.swift
-//  Project_2
+//  PhotoViewController.swift
+//  MyApp
 //
-//  Created by Den on 10.08.2023.
+//  Created by Den on 14.08.2023.
 //
-
 import UIKit
-
 class PhotoViewController: UICollectionViewController {
-    let networkService = NetworkService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         title = "Photos"
         collectionView.register(PhotoViewCell.self, forCellWithReuseIdentifier: "Cell")
-        networkService.getPhotos()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,7 +30,7 @@ class PhotoViewController: UICollectionViewController {
     }
 }
 
-extension CollectionViewController : UICollectionViewDelegateFlowLayout {
+extension PhotoViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 150, height: 150)

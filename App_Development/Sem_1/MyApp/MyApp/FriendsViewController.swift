@@ -1,23 +1,23 @@
 //
-//  GroupsViewController.swift
-//  Project_2
+//  FriendsViewController.swift
+//  MyApp
 //
-//  Created by Den on 10.08.2023.
+//  Created by Den on 14.08.2023.
 //
 
 import UIKit
 
-class GroupsViewController: UITableViewController {
-    let networkService = NetworkService()
-    
+class FriendsViewController: UITableViewController {
+    private let networkService = NetworkService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Groups"
+        title = "Friends"
         view.backgroundColor = .white
         tableView.backgroundColor = .white
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.barTintColor = .white
-        networkService.getGroups()
+        networkService.getFriends()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,6 +29,6 @@ class GroupsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        CustomTableViewCell2()
+        CustomTableViewCell()
     }
 }

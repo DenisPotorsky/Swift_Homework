@@ -7,8 +7,20 @@
 
 import Foundation
 
-struct PhotoModel: Codable {
-    //var height: Int
-    //var width: Int
-    var url: String
+struct PhotoModel: Decodable {
+    var response: Photos
+}
+
+struct Photos: Decodable {
+    var items: [Photo]
+}
+
+struct Photo: Decodable {
+    var id: Int
+    var ownerID: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case ownerID = "owner_id"
+    }
 }

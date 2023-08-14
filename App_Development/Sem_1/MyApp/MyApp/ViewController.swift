@@ -1,19 +1,13 @@
 //
 //  ViewController.swift
-//  Project_2
+//  MyApp
 //
-//  Created by Den on 04.08.2023.
-//
-
-//
-//  ViewController.swift
-//  Project_2
-//
-//  Created by Den on 04.08.2023.
+//  Created by Den on 14.08.2023.
 //
 
 import UIKit
 import WebKit
+   // .addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
 class ViewController: UIViewController{
     
     private lazy var webView: WKWebView = {
@@ -39,7 +33,7 @@ class ViewController: UIViewController{
     }
     private func tap(){
         let friendsTabController = UINavigationController(rootViewController: FriendsViewController())
-                let photosTabController = UINavigationController(rootViewController: CollectionViewController(collectionViewLayout: UICollectionViewFlowLayout()))
+                let photosTabController = UINavigationController(rootViewController: PhotoViewController(collectionViewLayout: UICollectionViewFlowLayout()))
                 let groupsTabController = UINavigationController(rootViewController: GroupsViewController())
                 friendsTabController.tabBarItem.title = "Friends"
                 groupsTabController.tabBarItem.title = "Groups"

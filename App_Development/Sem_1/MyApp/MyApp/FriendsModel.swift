@@ -1,21 +1,21 @@
 //
-//  FriendsModel.swift
-//  Project_2
+//  File.swift
+//  MyApp
 //
-//  Created by Den on 11.08.2023.
+//  Created by Den on 14.08.2023.
 //
 
 import Foundation
 
-struct FriendsModel: Codable {
+struct FriendsModel: Decodable {
     var response: Friends
 }
 
-struct Friends: Codable {
-    var items: [Friend]
+struct Friends: Decodable {
+    var items: [Friends]
 }
 
-struct Friend: Codable {
+struct Friend: Decodable {
     var id: Int
     var firstName: String?
     var lastName: String?
@@ -26,4 +26,3 @@ struct Friend: Codable {
         case lastName = "last_name"
     }
 }
-
