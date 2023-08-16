@@ -17,7 +17,7 @@ struct Photos: Decodable {
 
 struct Photo: Decodable {
     var id: Int
-    var ownerID: String?
+    var ownerID: Int
     
     enum CodingKeys: String, CodingKey {
         case id
