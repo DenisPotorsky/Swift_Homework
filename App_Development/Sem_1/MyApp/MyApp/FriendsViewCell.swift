@@ -7,11 +7,13 @@
 
 import UIKit
 
-final class CustomTableViewCell: UITableViewCell {
-    private var circle: UIImageView = {
-        let circle = UIImageView(image: UIImage(systemName: "person"))
-        circle.backgroundColor = .yellow
-        circle.layer.cornerRadius = 30
+final class FriendsViewCell: UITableViewCell {
+    private var circle = UIImageView()
+    
+    private var onlineCircle: UIView = {
+        let circle = UIView()
+        circle.backgroundColor = .gray
+        circle.layer.cornerRadius = 10
         return circle
     }()
     
@@ -33,25 +35,47 @@ final class CustomTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        contentView.addSubview(circle)
         contentView.addSubview(text1)
+        contentView.addSubview(circle)
+        circle.addSubview(onlineCircle)
         setupConstraints()
     }
     
     private func setupConstraints() {
         circle.translatesAutoresizingMaskIntoConstraints = false
+        onlineCircle.translatesAutoresizingMaskIntoConstraints = false
         text1.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             circle.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             circle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            circle.heightAnchor.constraint(equalToConstant: 60),
+            circle.heightAnchor.constraint(equalToConstant: 50),
             circle.widthAnchor.constraint(equalTo: circle.heightAnchor),
-            circle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            
+            onlineCircle.widthAnchor.constraint(equalToConstant: 20),
+            onlineCircle.heightAnchor.constraint(equalTo: onlineCircle.widthAnchor),
+            onlineCircle.bottomAnchor.constraint(equalTo: circle.bottomAnchor),
+            onlineCircle.trailingAnchor.constraint(equalTo: circle.trailingAnchor, constant: 10),
             
             text1.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             text1.leadingAnchor.constraint(equalTo: circle.trailingAnchor, constant: 30),
             text1.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10)
         ])
+    }
+    func setupText(friend: Friend) {
+        
+        text1.text = friend.firstName! + " " + friend.lastName!
+        if let online = friend.online {
+            let isOnline = online == 1
+            if isOnline {
+                onlineCircle.backgroundColor = .green
+            } else {
+                onlineCircle.backgroundColor = .red
+            }
+        }
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        text1.text = nil
     }
 }
