@@ -14,7 +14,6 @@ class PhotoViewController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         title = "Photos"
-
         collectionView.register(PhotoViewCell.self, forCellWithReuseIdentifier: "PhotoViewCell")
                 networkService.getPhotos { [weak self] photos in
                     self?.models = photos

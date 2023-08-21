@@ -19,7 +19,6 @@ final class FriendsViewCell: UITableViewCell {
     
     private var text1: UILabel = {
         let label = UILabel()
-        label.text = "Name"
         label.textColor = .black
         return label
     }()

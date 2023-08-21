@@ -12,7 +12,7 @@ final class PhotoViewCell: UICollectionViewCell {
     
     var tap: ((UIImage) -> Void)?
     private var imageView = UIImageView()
-    private let network = NetworkService()
+    //private let network = NetworkService()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,9 +36,9 @@ final class PhotoViewCell: UICollectionViewCell {
                 }
             }
         }
+    
     private func setupViews() {
         addSubview(imageView)
-        //network.getPhotos()
         setupConstraints()
     }
     
