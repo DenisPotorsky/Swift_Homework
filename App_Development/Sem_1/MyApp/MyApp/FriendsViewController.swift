@@ -32,9 +32,15 @@ class FriendsViewController: UITableViewController {
     }
     
     @objc private func tap() {
-        navigationController?.pushViewController(ProfileViewController(), animated: true)
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        animation.type = .fade
+        animation.duration = 0.5
+        navigationController?.view.layer.add(animation, forKey: nil)
+        navigationController?.pushViewController(ProfileViewController(isUserProfile: true), animated: false)
     }
     
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         models.count
     }
@@ -50,3 +56,4 @@ class FriendsViewController: UITableViewController {
     }
     
 }
+

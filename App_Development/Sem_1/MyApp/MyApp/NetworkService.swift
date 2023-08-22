@@ -15,9 +15,9 @@ final class NetworkService {
     
     static var token = ""
     static var userID = ""
-    //completion: @escaping ([Profile]) -> Void
+    //
     
-    func getProfile() {
+    func getProfile(completion: @escaping (Profile?) -> Void) {
         let url = URL(string: "https://api.vk.com/method/users.get?user_ids=\(NetworkService.userID)&fields=bdate&access_token=\(NetworkService.token)&v=5.131&fields=photo_100")
         
         session.dataTask(with: url!) { (data, _, error) in
@@ -26,7 +26,7 @@ final class NetworkService {
             }
             do {
                 let profile = try JSONDecoder().decode(ProfileModel.self, from: data)
-                //print(completion(profile.response))
+                completion(profile.response.first)
                 print(profile)
             } catch {
                 print(error)
@@ -52,7 +52,7 @@ final class NetworkService {
     }
     
     func getFriends(complition: @escaping ([Friend]) -> Void) {
-        let url = URL(string: "https://api.vk.com/method/friends.get?fields=photo_50&access_token=\(NetworkService.token)&v=5.131")
+        let url = URL(string: "https://api.vk.com/method/friends.get?fields=photo_50,online&access_token=\(NetworkService.token)&v=5.131")
         session.dataTask(with: url!) { (data, _, error) in
             guard let data else {
                 return
