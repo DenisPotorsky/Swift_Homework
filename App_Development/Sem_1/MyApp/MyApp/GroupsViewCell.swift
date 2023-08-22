@@ -8,12 +8,7 @@
 import UIKit
 
 final class GroupsViewCell: UITableViewCell {
-    private var circle: UIImageView = {
-        let circle = UIImageView(image: UIImage(systemName: "person"))
-        circle.backgroundColor = .yellow
-        circle.layer.cornerRadius = 30
-        return circle
-    }()
+    private var circle = UIImageView()
     
     private var text1: UILabel = {
         let label = UILabel()
@@ -39,10 +34,18 @@ final class GroupsViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupText(group: Group) {
+    func updateCell(group: Group) {
         text1.text = group.name
         text2.text = group.description
-    }
+        DispatchQueue.global().async {
+            if let url = URL(string: group.photo ?? ""), let data = try?
+                Data(contentsOf: url)
+            {
+                DispatchQueue.main.async {
+                    self.circle.image = UIImage(data: data)
+                }
+            }
+        }    }
     
     private func setupViews() {
         contentView.addSubview(circle)
@@ -77,5 +80,6 @@ final class GroupsViewCell: UITableViewCell {
         super.prepareForReuse()
         text1.text = nil
         text2.text = nil
+        circle.image = nil
     }
 }

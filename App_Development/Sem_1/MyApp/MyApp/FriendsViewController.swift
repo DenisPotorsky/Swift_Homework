@@ -51,7 +51,7 @@ class FriendsViewController: UITableViewController {
             return UITableViewCell()
         }
         let model = models[indexPath.row]
-        cell.setupText(friend: model)
+        cell.updateCell(friend: model)
         return cell
     }
     

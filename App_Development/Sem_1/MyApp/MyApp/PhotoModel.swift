@@ -21,5 +21,5 @@ struct Photo: Decodable {
 }
 
 struct Sizes: Decodable {
-    var url: String
+    var url: String?
 }

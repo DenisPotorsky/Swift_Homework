@@ -19,4 +19,13 @@ struct Group: Codable {
     var id: Int
     var name: String?
     var description: String?
+    var photo: String?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case id
+        case name
+        case description
+        case photo = "photo_50"
+    }
 }

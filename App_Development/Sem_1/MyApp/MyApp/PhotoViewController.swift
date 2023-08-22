@@ -40,6 +40,7 @@ class PhotoViewController: UICollectionViewController {
            cell.updateCell(model: model)
            return cell
        }
+    
 }
 
 extension PhotoViewController : UICollectionViewDelegateFlowLayout {

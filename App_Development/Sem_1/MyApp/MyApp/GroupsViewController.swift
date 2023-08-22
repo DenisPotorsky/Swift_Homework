@@ -42,7 +42,7 @@ class GroupsViewController: UITableViewController {
                     return UITableViewCell()
                 }
                 
-                cell.setupText(group: model)
+                cell.updateCell(group: model)
                 return cell
             }
             

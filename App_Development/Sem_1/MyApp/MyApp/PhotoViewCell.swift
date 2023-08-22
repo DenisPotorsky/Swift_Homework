@@ -12,6 +12,7 @@ final class PhotoViewCell: UICollectionViewCell {
     
     var tap: ((UIImage) -> Void)?
     private var imageView = UIImageView()
+    private var photos: [Photo] = []
     //private let network = NetworkService()
     
     override init(frame: CGRect) {
@@ -24,6 +25,7 @@ final class PhotoViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     func updateCell (model: Photo) {
             DispatchQueue.global ().async {
@@ -61,3 +63,4 @@ final class PhotoViewCell: UICollectionViewCell {
         imageView.image = nil
     }
 }
+

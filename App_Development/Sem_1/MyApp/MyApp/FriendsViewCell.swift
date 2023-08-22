@@ -9,7 +9,7 @@ import UIKit
 
 final class FriendsViewCell: UITableViewCell {
     private var circle = UIImageView()
-    
+
     private var onlineCircle: UIView = {
         let circle = UIView()
         circle.backgroundColor = .gray
@@ -32,6 +32,7 @@ final class FriendsViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     private func setupViews() {
         contentView.addSubview(text1)
@@ -61,7 +62,7 @@ final class FriendsViewCell: UITableViewCell {
             text1.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10)
         ])
     }
-    func setupText(friend: Friend) {
+    func updateCell(friend: Friend) {
         
         text1.text = friend.firstName! + " " + friend.lastName!
         if let online = friend.online {
@@ -72,9 +73,19 @@ final class FriendsViewCell: UITableViewCell {
                 onlineCircle.backgroundColor = .red
             }
         }
+        DispatchQueue.global().async {
+            if let url = URL(string: friend.photo ?? ""), let data = try?
+                Data(contentsOf: url)
+            {
+                DispatchQueue.main.async {
+                    self.circle.image = UIImage(data: data)
+                }
+            }
+        }
     }
     override func prepareForReuse() {
         super.prepareForReuse()
         text1.text = nil
+        circle.image = nil
     }
 }
